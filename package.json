@@ -9,6 +9,7 @@
   "author": "stodoriko",
   "license": "ISC",
   "dependencies": {
+    "@testing-library/user-event": "^13.5.0",
     "jest": "^29.3.1",
     "jest-puppeteer": "^6.1.1",
     "puppeteer": "^19.4.0"

@@ -18,6 +18,6 @@ describe("BookingTests", () => {
     });
 
     test("First happy path test", async () => {
-        await chooseFilmAndTime(page, "19:00", "Логан")
+        await chooseFilmAndTime(page, "Логан", "19:00");
     });
 });
