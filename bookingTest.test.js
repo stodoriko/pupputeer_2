@@ -19,5 +19,6 @@ describe("BookingTests", () => {
 
     test("First happy path test", async () => {
         await chooseFilmAndTime(page, "Логан", "19:00");
+        await booking(page, 1, 4);
     });
 });
