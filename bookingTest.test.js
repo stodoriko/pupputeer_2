@@ -7,7 +7,6 @@ const {getMainPageUrl,
 
 let page;
 
-
 describe("BookingTests", () => {
     beforeEach(async () => {
        page = await browser.newPage();
@@ -19,9 +18,9 @@ describe("BookingTests", () => {
         await page.close();
     });
 
-    test("First happy path test", async () => {
+    test.only("First happy path test", async () => {
         // await waitMainPageLoaded(page);
-        await chooseFilmAndTime(page, "Логан", "19:00");
+        await chooseFilmAndTime(page, '"Логан"', '"19:00"');
         await booking(page, 1, 4);
     });
 });
