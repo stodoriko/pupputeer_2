@@ -2,10 +2,13 @@ const {getMainPageUrl,
     booking, 
     getBookingCode, 
     chooseFilmAndTime,
-    waitMainPageLoaded
+    waitMainPageLoaded,
+    chooseDay, selectDay
 } = require ("./lib/commands");
+const {getNextDay} = require("./lib/utils");
 
 let page;
+const day = getNextDay();
 
 describe("BookingTests", () => {
     beforeEach(async () => {
@@ -19,7 +22,9 @@ describe("BookingTests", () => {
     });
 
     test.only("First happy path test", async () => {
-        // await waitMainPageLoaded(page);
+        const day = getNextDay();
+
+        await selectDay(page, day);
         await chooseFilmAndTime(page, '"Логан"', '"19:00"');
         await booking(page, 1, 4);
     });
